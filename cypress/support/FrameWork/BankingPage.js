@@ -103,6 +103,42 @@ customercomponent(){
     return cy.get('[ng-class="btnClass3"]')
 }
 
+
+CustomerfirstName(){
+    return cy.get(':nth-child(1) > .form-control')
 }
 
+CustomerlastName(){
+    return cy.get(':nth-child(2) > .form-control')
+}
+
+CustomerPostCode(){
+    return cy.get(':nth-child(3) > .form-control')
+}
+
+InsertAddCustomer(){
+    return cy.get('form.ng-dirty > .btn')
+}
+
+customertable(){
+    return cy.get('[ng-class="btnClass3"]')
+}
+
+OpenAccountPage(){
+    return cy.get('[ng-class="btnClass2"]')
+}
+
+SelectNewAddedCustomer(){
+    return cy.get('select').eq(0)
+}
+
+selectCurrency(){
+    return cy.get('select').eq(1)
+
+}
+
+ProcessButton(){
+    return cy.get('form.ng-dirty > button')
+}
+}
 export default BankingPage

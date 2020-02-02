@@ -9,6 +9,10 @@
   "Customer3":"Ron Weasly",
   "Customer4":"Albus Dumbledore",
   "Dspositamount":"1000",
-  "Withdrawamount":"500"
+  "Withdrawamount":"500",
+  "CustomerFName":"kalyan",
+  "CustomerLName":"Sam",
+  "CustomerPcode":"583103"
+
 
 }

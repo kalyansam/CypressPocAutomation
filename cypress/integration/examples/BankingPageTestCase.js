@@ -157,6 +157,52 @@ bankP.openaccount().should('be.visible')
 bankP.AddCustomer().click()
 
 // check the firstname ,lastName ,Post Code
+bankP.CustomerfirstName().should('be.visible')
+bankP.CustomerlastName().should('be.visible')
+bankP.CustomerPostCode().should('be.visible')
+
+//Enter customer details 
+
+bankP.CustomerfirstName().type(this.data.CustomerFName)
+bankP.CustomerlastName().type(this.data.CustomerLName)
+bankP.CustomerPostCode().type(this.data.CustomerPcode)
+
+//click on ADDCustomer button to insert Customer record
+bankP.InsertAddCustomer().click()
+
+//navigate to Open Account Page
+
+bankP.openaccount().click()
+
+//Activate customer account
+var fullname=this.data.CustomerFName+' '+this.data.CustomerLName
+bankP.SelectNewAddedCustomer().select(fullname)
+bankP.selectCurrency().select('Dollar')
+bankP.ProcessButton().click()
+
+//click on customer table
+bankP.customertable().click()
+
+//click on  the customers tab to see the records are inserted
+cy.get('tr td:nth-child(1)').each(($e1, index, $list) => {
+    
+    const CName=$e1.text()
+    cy.log(CName)
+    if(CName.includes(this.data.CustomerFName)){
+
+
+ expect(CName).to.equal(this.data.CustomerFName)
+ cy.log('Customer details are successfully added')
+
+ //Navigate to home page
+ bankP.Homebutton().click()
+
+}
+})
+
+
+   
+
 
 
 
